@@ -1,3 +1,5 @@
+Go through the commits to learn each step of Django and it's basics. 
+
 #### 1.  Setup Project
 ```
 $ django-admin.py startproject mysite
@@ -86,3 +88,7 @@ First we’ll need to create a user who can login to the admin site. Run the fol
 ```
 $ python manage.py createsuperuser
 ```
+
+#### 8. Adding templates to remove hard coding from views
+ See commit diff
+
