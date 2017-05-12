@@ -35,11 +35,21 @@ Creates ‘mysite/polls’ file structure:
 polls/
     __init__.py
     admin.py
-    apps.py
+    apps.py (Configuration for this 'polls' application)
     migrations/
         __init__.py
     models.py
     tests.py
-    urls.py (Manually created: For routing)
-    views.py (Controller code)
+    urls.py (Manually created this file, similar to routes.rb)
+    views.py (similar to controllers/)
+```
+
+#### 3. Create models and migrations
+
+```
+$ python manage.py showmigrations
+$ python manage.py makemigrations polls
+$ python manage.py sqlmigrate polls 0001
+$ python manage.py migrate (applies migrations to DB, of INSTALLED_APPS)
+$ python manage.py migrate my_app migration_that_you_want_to_revert_to
 ```
