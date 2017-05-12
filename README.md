@@ -53,3 +53,9 @@ $ python manage.py sqlmigrate polls 0001
 $ python manage.py migrate (applies migrations to DB, of INSTALLED_APPS)
 $ python manage.py migrate my_app migration_that_you_want_to_revert_to
 ```
+
+#### 4. Play in the Shell
+
+```
+$ python manage.py shell
+```
