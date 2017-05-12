@@ -1,6 +1,42 @@
 Go through the commits to learn each step of Django and it's basics. 
 
-#### 1.  Setup Project
+#### 0. Prepare environment for dev
+First, navigate to the Django project root folder.
+
+```
+$ cd /path/to/project
+```
+
+Next, create the virtual env in the `env/` folder.
+
+```
+$ pip install virtualenv
+$ virtualenv env/
+```
+
+Now you can activate and deactivate the virtual environment. To activate
+the virtual environment, perform the following.
+
+```
+$ source env/bin/activate
+```
+
+Finally, install the required packages. The packages and their versions are
+in the `requirements.txt` file, and pip can be used to install them all
+at once.
+
+```
+$ pip install -r requirements.txt
+```
+Note: Don't do this until you are finished working on the project. To
+deactivate the virtual environment, perform the following.
+
+```
+$ deactivate
+```
+
+
+#### 1.  Create Project
 ```
 $ django-admin.py startproject mysite
 ```
@@ -26,7 +62,7 @@ The development server automatically reloads Python code for each request as nee
 $ python manage.py runserver 0.0.0.0:8080
 ```
 
-#### 2. Start an app 
+#### 2. Create an app 
 
 ```
 $ python manage.py startapp polls 
@@ -96,4 +132,9 @@ $ python manage.py createsuperuser
 ```
 $ python manage.py test
 $ python manage.py test polls
+```
+
+#### 10. CircleCI
+```
+https://circleci.com/gh/kamilski81/django_tutorial
 ```
