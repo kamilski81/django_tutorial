@@ -54,13 +54,13 @@ $ python manage.py migrate (applies migrations to DB, of INSTALLED_APPS)
 $ python manage.py migrate my_app migration_that_you_want_to_revert_to
 ```
 
-#### 4. Play in the Shell
+#### 4. (Good) Play in the Shell
 
 ```
 $ python manage.py shell
 ```
 
-#### 5. Or play in the shell_plus with Django Extensions
+#### 5. (Better) Or play in the shell_plus with Django Extensions
 
 ```
 $ pip install django-extensions (then add INSTALLED_APPS='django_extensions')  
@@ -72,10 +72,17 @@ $ python manage.py validate_templates
 $ python manage.py graph_models -a -o myapp_models.png
 ```
 
-#### 6. Or install ipython and use shell with notebooks (for quickest reloading and saving)
+#### 6. (Best) Or install ipython and use shell with notebooks (for quickest reloading and saving)
 
 ```
 $ python manage.py shell_plus --notebook
 $ pip install ipython
 $ pip install "ipython[notebook]"
+```
+
+#### 7. Work in the Django admin
+
+First we’ll need to create a user who can login to the admin site. Run the following command:
+```
+$ python manage.py createsuperuser
 ```
