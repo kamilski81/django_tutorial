@@ -92,3 +92,8 @@ $ python manage.py createsuperuser
 #### 8. Adding templates to remove hard coding from views
  See commit diff
 
+#### 9. Test your application
+```
+$ python manage.py test
+$ python manage.py test polls
+```
