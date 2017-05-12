@@ -59,3 +59,23 @@ $ python manage.py migrate my_app migration_that_you_want_to_revert_to
 ```
 $ python manage.py shell
 ```
+
+#### 5. Or play in the shell_plus with Django Extensions
+
+```
+$ pip install django-extensions (then add INSTALLED_APPS='django_extensions')  
+$ python manage.py shell_plus
+
+$ python manage.py runserver_plus
+$ python manage.py show_urls
+$ python manage.py validate_templates
+$ python manage.py graph_models -a -o myapp_models.png
+```
+
+#### 6. Or install ipython and use shell with notebooks (for quickest reloading and saving)
+
+```
+$ python manage.py shell_plus --notebook
+$ pip install ipython
+$ pip install "ipython[notebook]"
+```
