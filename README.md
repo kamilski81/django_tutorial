@@ -138,3 +138,7 @@ $ python manage.py test polls
 ```
 https://circleci.com/gh/kamilski81/django_tutorial
 ```
+
+#### 11. Use DEBUG mode in Unit tests, or when you are debugging the server.
+
+![picture](doc/runserver DEBUG mode.png)
