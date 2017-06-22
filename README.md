@@ -142,3 +142,6 @@ https://circleci.com/gh/kamilski81/django_tutorial
 #### 11. Use DEBUG mode in Unit tests, or when you are debugging the server.
 
 ![picture](doc/runserver DEBUG mode.png)
+
+#### 12. Use HTML forms to gather data
+https://docs.djangoproject.com/en/1.11/intro/tutorial04/

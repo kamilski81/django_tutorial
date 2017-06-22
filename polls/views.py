@@ -5,6 +5,8 @@ from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from django.urls import reverse
 from .models import *
+from .forms import QuestionForm
+from django.utils import timezone
 
 
 # An example of explicit loading
@@ -14,6 +16,22 @@ def index(request):
     context = {'latest_question_list': latest_question_list, }
     rendered_template = template.render(context, request)
     return HttpResponse(rendered_template)
+
+
+# Create a poll question
+def create(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.pub_date = timezone.now()
+            form.save()
+            url = reverse('polls:index')
+            return HttpResponseRedirect(url)
+    else:
+        form = QuestionForm()
+
+    return render(request, 'polls/question.html', {'form': form})
 
 
 # An example of render
