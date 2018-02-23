@@ -146,3 +146,10 @@ https://circleci.com/gh/kamilski81/django_tutorial
 
 #### 12. Use HTML forms to gather data
 https://docs.djangoproject.com/en/1.11/intro/tutorial04/
+
+#### 13. Adding Celery and Redis
+ See commit diff and run following from root directory:
+ 
+```
+$ celery -A polls.tasks worker --loglevel=info
+```

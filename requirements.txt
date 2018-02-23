@@ -1,2 +1,8 @@
 Django==1.11.1
 django-extensions==1.7.9
+
+
+# Background worker support
+celery
+django-redis
+redis
