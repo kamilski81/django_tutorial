@@ -8,6 +8,8 @@ from .models import *
 from .forms import QuestionForm
 from django.utils import timezone
 
+from tasks import add
+
 
 # An example of explicit loading
 def index(request):
@@ -15,6 +17,9 @@ def index(request):
     template = loader.get_template('polls/index.html')
     context = {'latest_question_list': latest_question_list, }
     rendered_template = template.render(context, request)
+
+    add.delay(5, 10)
+
     return HttpResponse(rendered_template)
 
 

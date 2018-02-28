@@ -153,3 +153,15 @@ https://docs.djangoproject.com/en/1.11/intro/tutorial04/
 ```
 $ celery -A polls.tasks worker --loglevel=info
 ```
+
+To see if Celery is running:
+
+``` 
+$ celery -A polls.tasks inspect ping --loglevel=info
+```
+
+#### 14. Adding Flower (Celery Task Monitor)
+
+```
+$ celery flower -A polls.tasks worker --loglevel=info
+```
