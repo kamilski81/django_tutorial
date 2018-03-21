@@ -157,11 +157,30 @@ $ celery -A polls.tasks worker --loglevel=info
 To see if Celery is running:
 
 ``` 
-$ celery -A polls.tasks inspect ping --loglevel=info
+$ celery -A polls.tasks inspect ping
 ```
 
 #### 14. Adding Flower (Celery Task Monitor)
 
 ```
 $ celery flower -A polls.tasks worker --loglevel=info
+```
+
+#### 15. Adding django-celery-beat (Periodic Task Scheduler)
+First, install the library, and run the pre-existing migrations:
+```
+pip install django-celery-beat
+python manage.py migrate
+```
+
+Then,
+```python
+INSTALLED_APPS = (
+    'django_celery_beat',
+)
+```
+
+Finally: 1) start celery, 2) start the web-app, 3) start celery-beat:
+```
+celery beat -A polls.tasks --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler
 ```

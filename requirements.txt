@@ -4,6 +4,7 @@ django-extensions==1.7.9
 
 # Background worker support
 celery
+django-celery-beat
 django-redis
 redis
 flower

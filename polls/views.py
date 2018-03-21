@@ -8,7 +8,7 @@ from .models import *
 from .forms import QuestionForm
 from django.utils import timezone
 
-from tasks import add
+from tasks import tutorial_add
 
 
 # An example of explicit loading
@@ -18,7 +18,7 @@ def index(request):
     context = {'latest_question_list': latest_question_list, }
     rendered_template = template.render(context, request)
 
-    add.delay(5, 10)
+    tutorial_add.delay(5, 10)
 
     return HttpResponse(rendered_template)
 
